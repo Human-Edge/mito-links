@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Mito</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        var link = document.getElementById("link");
+        var baseUri = "";
+        const url = new URL(window.location);
+        window.location = `https://humanedge.co`;
+
+        const redirectInterval = setInterval(() => {
+          var countdown = document.querySelector(".countdown");
+          var t = parseInt(countdown.innerText, 10);
+          t -= 1;
+          countdown.innerText = t;
+        }, 1000);
+
+        setTimeout(function () {
+          window.location = "https://humanedge.co";
+          clearInterval(redirectInterval);
+        }, 5000);
+      });
+    </script>
+  </head>
+
+  <body>
+    <p>
+      Redirecting in
+      <span class="countdown">5</span> seconds
+    </p>
+    <a id="link">Open Link</a>
+  </body>
+</html>
