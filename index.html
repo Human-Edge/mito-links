@@ -1,24 +1,33 @@
 <html>
   <head>
-    <title>Mito</title>
+    <title>Mito App Links</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <script>
       document.addEventListener("DOMContentLoaded", function (event) {
-        var link = document.getElementById("link");
-        var baseUri = "";
+        const link = document.getElementById("link");
+        let deeplink = "mitoapp://";
         const url = new URL(window.location);
-        window.location = `https://humanedge.co/mito/`;
+        const params = new URLSearchParams(url.search);
+        // copy current query params to deeplink
+        params.forEach((value, key) => {
+          deeplink += `?${key}=${value}`;
+        });
+        window.location = deeplink;
+        link.href = deeplink;
+        const countdown = document.querySelector(".countdown");
+        const countdownContainer = document.querySelector(".countdown-container");
 
         const redirectInterval = setInterval(() => {
-          var countdown = document.querySelector(".countdown");
-          var t = parseInt(countdown.innerText, 10);
+          let t = parseInt(countdown.innerText, 10);
           t -= 1;
           countdown.innerText = t;
         }, 1000);
 
         setTimeout(function () {
-          window.location = "https://humanedge.co/mito/";
+          window.location = deeplink;
+          // hide countdown
+          countdownContainer.style.display = "none";
           clearInterval(redirectInterval);
         }, 5000);
       });
@@ -26,10 +35,618 @@
   </head>
 
   <body>
-    <p>
-      Redirecting in
-      <span class="countdown">5</span> seconds
-    </p>
-    <a id="link">Open Link</a>
+    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tbody>
+        <tr>
+          <td
+            width="100%"
+            height="100%"
+            style="
+              background-color: #f9f6fe;
+              border-radius: 16px;
+              padding-left: 16px;
+              padding-right: 16px;
+            "
+            bgcolor="#f9f6fe"
+          >
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td
+                    height="24"
+                    style="height: 24px; min-height: 24px; line-height: 24px"
+                  ></td>
+                </tr>
+                <tr>
+                  <td
+                    height="24"
+                    style="height: 24px; min-height: 24px; line-height: 24px"
+                  >
+                    <p class="countdown-container"">
+                      Redirecting in
+                      <span class="countdown">5</span> seconds
+                    </p>
+                    <a id="link">Open Link</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    height="24"
+                    style="height: 24px; min-height: 24px; line-height: 24px"
+                  ></td>
+                </tr>
+                <tr>
+                  <td width="100%">
+                    <table
+                      width="100%"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                    >
+                      <tbody>
+                        <tr>
+                          <td>
+                            <table cellspacing="0" cellpadding="0" border="0">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <div
+                                      style="
+                                        line-height: 24px;
+                                        text-align: left;
+                                      "
+                                    >
+                                      <span
+                                        style="
+                                          color: #000030;
+                                          font-weight: 500;
+                                          font-family: IBM Plex Sans, Arial,
+                                            sans-serif;
+                                          font-size: 24px;
+                                          line-height: 24px;
+                                          text-align: left;
+                                        "
+                                        >Download Mito</span
+                                      >
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            height="12"
+                            style="
+                              height: 12px;
+                              min-height: 12px;
+                              line-height: 12px;
+                            "
+                          ></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div style="line-height: 20px; text-align: left">
+                              <span
+                                style="
+                                  color: #000030;
+                                  font-weight: 450;
+                                  font-family: IBM Plex Sans, Arial, sans-serif;
+                                  font-size: 16px;
+                                  line-height: 20px;
+                                  text-align: left;
+                                "
+                                >Please click on the below link for Apple or
+                                Android
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    height="24"
+                    style="height: 24px; min-height: 24px; line-height: 24px"
+                  ></td>
+                </tr>
+                <tr>
+                  <td>
+                    <table cellspacing="0" cellpadding="0" border="0">
+                      <tbody>
+                        <tr>
+                          <td style="vertical-align: middle">
+                            <table
+                              width="100%"
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td style="vertical-align: middle">
+                                    <a
+                                      href="https://apps.apple.com/us/app/mito-personalised-wellbeing/id1611008306"
+                                      rel="noreferrer"
+                                      target="_blank"
+                                      data-saferedirecturl="https://www.google.com/url?q=https://apps.apple.com/us/app/mito-personalised-wellbeing/id1611008306&amp;source=gmail&amp;ust=1704972155598000&amp;usg=AOvVaw2MCyLO5RsgSYjLvRuEpKYo"
+                                    >
+                                      <table
+                                        cellspacing="0"
+                                        cellpadding="0"
+                                        border="0"
+                                      >
+                                        <tbody>
+                                          <tr>
+                                            <td
+                                              align="center"
+                                              style="
+                                                vertical-align: middle;
+                                                height: 56px;
+                                                background-color: #373738;
+                                                border-radius: 8px;
+                                                border: 1px solid #475467;
+                                                padding-left: 12px;
+                                                padding-right: 12px;
+                                              "
+                                              bgcolor="#373738"
+                                            >
+                                              <table
+                                                width="100%"
+                                                border="0"
+                                                cellpadding="0"
+                                                cellspacing="0"
+                                              >
+                                                <tbody>
+                                                  <tr>
+                                                    <td
+                                                      height="8"
+                                                      style="
+                                                        height: 8px;
+                                                        min-height: 8px;
+                                                        line-height: 8px;
+                                                      "
+                                                    ></td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        vertical-align: middle;
+                                                      "
+                                                    >
+                                                      <table
+                                                        cellspacing="0"
+                                                        cellpadding="0"
+                                                        border="0"
+                                                      >
+                                                        <tbody>
+                                                          <tr>
+                                                            <td
+                                                              style="
+                                                                vertical-align: middle;
+                                                                height: 40px;
+                                                              "
+                                                            >
+                                                              <table
+                                                                width="100%"
+                                                                border="0"
+                                                                cellpadding="0"
+                                                                cellspacing="0"
+                                                              >
+                                                                <tbody>
+                                                                  <tr>
+                                                                    <td
+                                                                      style="
+                                                                        vertical-align: middle;
+                                                                      "
+                                                                      width="36"
+                                                                    >
+                                                                      <img
+                                                                        src="https://ci3.googleusercontent.com/meips/ADKq_Nbv-jTFIlVAFnZX_xIlRwYrWdukpadSpGeQZuMbQqR92VxK0bi46XcjsFQDLyQOSyBeVFgN856ZmgyCuXRk2ZBiy5_rdFY7OBfmWcoEpUUfwzqj00WBR5W_mYrZ75b-2-axBos=s0-d-e1-ft#https://plugin.markaimg.com/public/0468c8a3/vf5mdKwNgE8Lkq68lhz0wwMJqYH15z.png"
+                                                                        width="36"
+                                                                        border="0"
+                                                                        style="
+                                                                          min-width: 36px;
+                                                                          width: 36px;
+                                                                          height: auto;
+                                                                          display: block;
+                                                                        "
+                                                                        class="CToWUd"
+                                                                        data-bit="iit"
+                                                                      />
+                                                                    </td>
+                                                                    <td
+                                                                      style="
+                                                                        width: 4px;
+                                                                        min-width: 4px;
+                                                                      "
+                                                                      width="4"
+                                                                    ></td>
+                                                                    <td
+                                                                      style="
+                                                                        vertical-align: middle;
+                                                                      "
+                                                                    >
+                                                                      <table
+                                                                        cellspacing="0"
+                                                                        cellpadding="0"
+                                                                        border="0"
+                                                                      >
+                                                                        <tbody>
+                                                                          <tr>
+                                                                            <td>
+                                                                              <table
+                                                                                width="100%"
+                                                                                border="0"
+                                                                                cellpadding="0"
+                                                                                cellspacing="0"
+                                                                              >
+                                                                                <tbody>
+                                                                                  <tr>
+                                                                                    <td>
+                                                                                      <div
+                                                                                        style="
+                                                                                          line-height: 18px;
+                                                                                          text-align: left;
+                                                                                        "
+                                                                                      >
+                                                                                        <span
+                                                                                          style="
+                                                                                            color: #fcfcfd;
+                                                                                            font-family: Figtree,
+                                                                                              Arial,
+                                                                                              sans-serif;
+                                                                                            font-size: 12px;
+                                                                                            line-height: 18px;
+                                                                                            text-align: left;
+                                                                                          "
+                                                                                          >Download
+                                                                                          on
+                                                                                          the</span
+                                                                                        >
+                                                                                      </div>
+                                                                                    </td>
+                                                                                  </tr>
+                                                                                  <tr>
+                                                                                    <td>
+                                                                                      <table
+                                                                                        cellspacing="0"
+                                                                                        cellpadding="0"
+                                                                                        border="0"
+                                                                                      >
+                                                                                        <tbody>
+                                                                                          <tr>
+                                                                                            <td>
+                                                                                              <div
+                                                                                                style="
+                                                                                                  line-height: 30px;
+                                                                                                  text-align: left;
+                                                                                                "
+                                                                                              >
+                                                                                                <a
+                                                                                                  style="
+                                                                                                    color: #fcfcfd;
+                                                                                                    font-weight: 600;
+                                                                                                    font-family: Figtree,
+                                                                                                      Arial,
+                                                                                                      sans-serif;
+                                                                                                    font-size: 20px;
+                                                                                                    letter-spacing: -0.01em;
+                                                                                                    line-height: 30px;
+                                                                                                    text-align: left;
+                                                                                                    text-decoration: none;
+                                                                                                  "
+                                                                                                  href="https://apps.apple.com/us/app/mito-personalised-wellbeing/id1611008306"
+                                                                                                  rel="noreferrer"
+                                                                                                  target="_blank"
+                                                                                                  data-saferedirecturl="https://www.google.com/url?q=https://apps.apple.com/us/app/mito-personalised-wellbeing/id1611008306&amp;source=gmail&amp;ust=1704972155598000&amp;usg=AOvVaw2MCyLO5RsgSYjLvRuEpKYo"
+                                                                                                >
+                                                                                                  <span
+                                                                                                    >App
+                                                                                                    Store</span
+                                                                                                  ></a
+                                                                                                >
+                                                                                              </div>
+                                                                                            </td>
+                                                                                          </tr>
+                                                                                        </tbody>
+                                                                                      </table>
+                                                                                    </td>
+                                                                                  </tr>
+                                                                                </tbody>
+                                                                              </table>
+                                                                            </td>
+                                                                          </tr>
+                                                                        </tbody>
+                                                                      </table>
+                                                                    </td>
+                                                                  </tr>
+                                                                </tbody>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td
+                                                      height="8"
+                                                      style="
+                                                        height: 8px;
+                                                        min-height: 8px;
+                                                        line-height: 8px;
+                                                      "
+                                                    ></td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </a>
+                                  </td>
+                                  <td
+                                    style="width: 12px; min-width: 12px"
+                                    width="12"
+                                  ></td>
+                                  <td style="vertical-align: middle">
+                                    <a
+                                      href="https://play.google.com/store/apps/details?id=co.humanedge.mito"
+                                      rel="noreferrer"
+                                      target="_blank"
+                                      data-saferedirecturl="https://www.google.com/url?q=https://play.google.com/store/apps/details?id%3Dco.humanedge.mito&amp;source=gmail&amp;ust=1704972155598000&amp;usg=AOvVaw2aBzB_zAuvlzrUJfUglnJe"
+                                    >
+                                      <table
+                                        cellspacing="0"
+                                        cellpadding="0"
+                                        border="0"
+                                      >
+                                        <tbody>
+                                          <tr>
+                                            <td
+                                              align="center"
+                                              style="
+                                                vertical-align: middle;
+                                                height: 56px;
+                                                background-color: #373738;
+                                                border-radius: 8px;
+                                                border: 1px solid #475467;
+                                                padding-left: 10px;
+                                                padding-right: 10px;
+                                              "
+                                              bgcolor="#373738"
+                                            >
+                                              <table
+                                                width="100%"
+                                                border="0"
+                                                cellpadding="0"
+                                                cellspacing="0"
+                                              >
+                                                <tbody>
+                                                  <tr>
+                                                    <td
+                                                      height="8"
+                                                      style="
+                                                        height: 8px;
+                                                        min-height: 8px;
+                                                        line-height: 8px;
+                                                      "
+                                                    ></td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        vertical-align: middle;
+                                                      "
+                                                    >
+                                                      <table
+                                                        cellspacing="0"
+                                                        cellpadding="0"
+                                                        border="0"
+                                                      >
+                                                        <tbody>
+                                                          <tr>
+                                                            <td
+                                                              align="center"
+                                                              style="
+                                                                vertical-align: middle;
+                                                                height: 40px;
+                                                              "
+                                                            >
+                                                              <table
+                                                                width="100%"
+                                                                border="0"
+                                                                cellpadding="0"
+                                                                cellspacing="0"
+                                                              >
+                                                                <tbody>
+                                                                  <tr>
+                                                                    <td
+                                                                      style="
+                                                                        vertical-align: middle;
+                                                                      "
+                                                                      width="36"
+                                                                      align="center"
+                                                                    >
+                                                                      <img
+                                                                        src="https://ci3.googleusercontent.com/meips/ADKq_NaZEnusgfnwlQlShcTe2zmCVtLD5B38PHlbYxN_jvpIR9M9Bc0IsZMTBTlo-4f1lSfqerrMeWOBdofRtEf3pUIwZQsNwk2elr_risoZERZt2NizWfmZBll7osEaKYugNyo7IO0=s0-d-e1-ft#https://plugin.markaimg.com/public/0468c8a3/xHUptb3mPEUwq3c6s9ktibWrU6c1E5.png"
+                                                                        width="36"
+                                                                        border="0"
+                                                                        style="
+                                                                          min-width: 36px;
+                                                                          width: 36px;
+                                                                          height: auto;
+                                                                          display: block;
+                                                                        "
+                                                                        class="CToWUd"
+                                                                        data-bit="iit"
+                                                                      />
+                                                                    </td>
+                                                                    <td
+                                                                      style="
+                                                                        width: 4px;
+                                                                        min-width: 4px;
+                                                                      "
+                                                                      width="4"
+                                                                    ></td>
+                                                                    <td
+                                                                      style="
+                                                                        vertical-align: middle;
+                                                                      "
+                                                                    >
+                                                                      <table
+                                                                        cellspacing="0"
+                                                                        cellpadding="0"
+                                                                        border="0"
+                                                                      >
+                                                                        <tbody>
+                                                                          <tr>
+                                                                            <td>
+                                                                              <table
+                                                                                width="100%"
+                                                                                border="0"
+                                                                                cellpadding="0"
+                                                                                cellspacing="0"
+                                                                              >
+                                                                                <tbody>
+                                                                                  <tr>
+                                                                                    <td>
+                                                                                      <table
+                                                                                        cellspacing="0"
+                                                                                        cellpadding="0"
+                                                                                        border="0"
+                                                                                      >
+                                                                                        <tbody>
+                                                                                          <tr>
+                                                                                            <td>
+                                                                                              <div
+                                                                                                style="
+                                                                                                  line-height: 18px;
+                                                                                                  text-align: left;
+                                                                                                "
+                                                                                              >
+                                                                                                <a
+                                                                                                  style="
+                                                                                                    color: #fcfcfd;
+                                                                                                    font-family: Figtree,
+                                                                                                      Arial,
+                                                                                                      sans-serif;
+                                                                                                    font-size: 12px;
+                                                                                                    line-height: 18px;
+                                                                                                    text-align: left;
+                                                                                                    text-decoration: none;
+                                                                                                  "
+                                                                                                  href="https://play.google.com/store/apps/details?id=co.humanedge.mito"
+                                                                                                  rel="noreferrer"
+                                                                                                  target="_blank"
+                                                                                                  data-saferedirecturl="https://www.google.com/url?q=https://play.google.com/store/apps/details?id%3Dco.humanedge.mito&amp;source=gmail&amp;ust=1704972155598000&amp;usg=AOvVaw2aBzB_zAuvlzrUJfUglnJe"
+                                                                                                >
+                                                                                                  <span
+                                                                                                    >Get
+                                                                                                    it
+                                                                                                    on</span
+                                                                                                  ></a
+                                                                                                >
+                                                                                              </div>
+                                                                                            </td>
+                                                                                          </tr>
+                                                                                        </tbody>
+                                                                                      </table>
+                                                                                    </td>
+                                                                                  </tr>
+                                                                                  <tr>
+                                                                                    <td>
+                                                                                      <div
+                                                                                        style="
+                                                                                          line-height: 28px;
+                                                                                          text-align: left;
+                                                                                        "
+                                                                                      >
+                                                                                        <a
+                                                                                          style="
+                                                                                            color: #fcfcfd;
+                                                                                            font-weight: 600;
+                                                                                            font-family: Figtree,
+                                                                                              Arial,
+                                                                                              sans-serif;
+                                                                                            font-size: 18px;
+                                                                                            letter-spacing: -0.01em;
+                                                                                            line-height: 28px;
+                                                                                            text-align: left;
+                                                                                            text-decoration: none;
+                                                                                          "
+                                                                                          href="https://play.google.com/store/apps/details?id=co.humanedge.mito"
+                                                                                          rel="noreferrer"
+                                                                                          target="_blank"
+                                                                                          data-saferedirecturl="https://www.google.com/url?q=https://play.google.com/store/apps/details?id%3Dco.humanedge.mito&amp;source=gmail&amp;ust=1704972155598000&amp;usg=AOvVaw2aBzB_zAuvlzrUJfUglnJe"
+                                                                                        >
+                                                                                          <span
+                                                                                            >Google
+                                                                                            Play</span
+                                                                                          ></a
+                                                                                        >
+                                                                                      </div>
+                                                                                    </td>
+                                                                                  </tr>
+                                                                                </tbody>
+                                                                              </table>
+                                                                            </td>
+                                                                          </tr>
+                                                                        </tbody>
+                                                                      </table>
+                                                                    </td>
+                                                                  </tr>
+                                                                </tbody>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td
+                                                      height="8"
+                                                      style="
+                                                        height: 8px;
+                                                        min-height: 8px;
+                                                        line-height: 8px;
+                                                      "
+                                                    ></td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    height="24"
+                    style="height: 24px; min-height: 24px; line-height: 24px"
+                  ></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
