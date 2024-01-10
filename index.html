@@ -6,13 +6,15 @@
     <script>
       document.addEventListener("DOMContentLoaded", function (event) {
         const link = document.getElementById("link");
-        let deeplink = "mitoapp://";
+        let deeplink = "mitoappdev://";
         const url = new URL(window.location);
         const params = new URLSearchParams(url.search);
-        // copy current query params to deeplink
+        // copy current query params to deeplink in the format of ?screen=home&param1=foo&param2=bar to home/foo/bar
         params.forEach((value, key) => {
-          deeplink += `?${key}=${value}`;
+          deeplink += `${value}/`;
         });
+        // remove trailing /
+        deeplink = deeplink.replace(/\/$/, "");
         window.location = deeplink;
         link.href = deeplink;
         const countdown = document.querySelector(".countdown");
