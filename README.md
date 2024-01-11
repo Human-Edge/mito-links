@@ -13,7 +13,7 @@ It starts an interval that decreases the number displayed in the countdown eleme
 To use this file, simply open it in a web browser. The URL of the page should have query parameters in the format ?param1=value1&param2=value2. The script will transform these into the format /value1/value2 and redirect to that URL.
 
 # Example
-If you open the page at the URL http://example.com/foo.html?screen=home&param1=foo&param2=bar, the script will redirect to mitoapp://home/foo/bar.
+If you open the page at the URL https://human-edge.github.io/mito-links/?screen=home&param1=foo&param2=bar, the script will redirect to mitoapp://home/foo/bar.
 
 # Note
 This script assumes that there is a link element and a countdown element in the DOM. If these elements are not present, the script will throw an error.
