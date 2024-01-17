@@ -25,13 +25,28 @@
     <script>
       document.addEventListener("DOMContentLoaded", function (event) {
         const link = document.getElementById("link");
-        let deeplink = "mitoappdev://";
+        let deeplink = "mitoapp://";
         const url = new URL(window.location);
         const params = new URLSearchParams(url.search);
+        // parse params with env key from search params
+        const env = params.get("env");
+        
+        if (env === 'dev') {
+          deeplink = 'mitoappdev://';
+        } else if (env === 'staging') {
+          deeplink = 'mitoappstaging://';
+        } else {
+          deeplink = 'mitoapp://';
+        }
+      
+        // remove the env key from search params
+        params.delete("env");
         // copy current query params to deeplink in the format of ?screen=home&param1=foo&param2=bar to home/foo/bar
         params.forEach((value, key) => {
           deeplink += `${value}/`;
         });
+
+        
         // remove trailing /
         deeplink = deeplink.replace(/\/$/, "");
         window.location = deeplink;
