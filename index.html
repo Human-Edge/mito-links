@@ -2,7 +2,26 @@
   <head>
     <title>Mito App Links</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- set inline styles -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: IBM Plex Sans, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f9f6fe;
+      }
 
+      table {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      </style>
     <script>
       document.addEventListener("DOMContentLoaded", function (event) {
         const link = document.getElementById("link");
@@ -32,7 +51,24 @@
           countdownContainer.style.display = "none";
           clearInterval(redirectInterval);
         }, 5000);
+        // show countdown only for mobile devices' browsers and show message for desktop browsers
+        // that open this link on mobile browser to log in
+        if (
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          )
+        ) {
+          countdownContainer.style.display = "block";
+        } else {
+          const desktopMessage = document.querySelector(".desktop-message");
+          countdownContainer.style.display = "none";
+          link.style.display = "none";
+          desktopMessage.innerText =
+            "Please open this link on your mobile browser";
+        }
+        
       });
+
     </script>
   </head>
 
@@ -62,13 +98,15 @@
                 <tr>
                   <td
                     height="24"
-                    style="height: 24px; min-height: 24px; line-height: 24px"
+                    style="height: 24px; min-height: 24px; line-height: 24px; text-align: center;"
+                    
                   >
+                  <p class="desktop-message"></p>
                     <p class="countdown-container"">
                       Redirecting in
                       <span class="countdown">5</span> seconds
                     </p>
-                    <a id="link">Open Link</a>
+                    <a id="link" >Open Link</a>
                   </td>
                 </tr>
                 <tr>
@@ -129,7 +167,7 @@
                         </tr>
                         <tr>
                           <td>
-                            <div style="line-height: 20px; text-align: left">
+                            <div style="line-height: 20px; text-align: center">
                               <span
                                 style="
                                   color: #000030;
@@ -137,7 +175,7 @@
                                   font-family: IBM Plex Sans, Arial, sans-serif;
                                   font-size: 16px;
                                   line-height: 20px;
-                                  text-align: left;
+                                  text-align: center;
                                 "
                                 >Please click on the below link for Apple or
                                 Android
