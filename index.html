@@ -41,14 +41,14 @@
       
         // remove the env key from search params
         params.delete("env");
-        // copy current query params to deeplink in the format of ?screen=home&param1=foo&param2=bar to home/foo/bar
-        params.forEach((value, key) => {
-          deeplink += `${value}/`;
-        });
 
-        
-        // remove trailing /
-        deeplink = deeplink.replace(/\/$/, "");
+        const screenName = params.get("screen");
+        if (screenName) {
+          deeplink += `${screenName}`;
+          params.delete("screen");
+        }
+        // copy current query params to deeplink in the format of ?env=dev&screen=home&param1=foo&param2=bar to home?param1=foo&param2=bar
+        deeplink += `${url.pathname}?${params.toString()}`;
         window.location = deeplink;
         link.href = deeplink;
         const countdown = document.querySelector(".countdown");
