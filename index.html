@@ -30,7 +30,6 @@
         const params = new URLSearchParams(url.search);
         // parse params with env key from search params
         const env = params.get("env");
-        
         if (env === 'dev') {
           deeplink = 'mitoappdev://';
         } else if (env === 'staging') {
@@ -47,8 +46,9 @@
           deeplink += `${screenName}`;
           params.delete("screen");
         }
+        
         // copy current query params to deeplink in the format of ?env=dev&screen=home&param1=foo&param2=bar to home?param1=foo&param2=bar
-        deeplink += `${url.pathname}?${params.toString()}`;
+        deeplink += `?${params.toString()}`;
         window.location = deeplink;
         link.href = deeplink;
         const countdown = document.querySelector(".countdown");
